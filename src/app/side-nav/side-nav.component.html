@@ -1,0 +1,28 @@
+<div class="side-elements">
+  <div class="side-nav" [ngClass]="{ collapsed: isCollapsed }">
+    <ul class="nav-links">
+      <li class="nav-item" *ngFor="let item of navItems">
+        <div class="nav-item-header" (click)="toggleSubMenu(item)">
+          <i class="icon">{{ item.icon }}</i>
+          <span *ngIf="!isCollapsed">{{ item.label }}</span>
+          <span
+            [ngClass]="
+              item.isCollapsed ? 'bi bi-caret-down-fill' : 'bi bi-caret-up-fill'
+            "
+          ></span>
+        </div>
+
+        <ul *ngIf="!item.isCollapsed" class="sub-nav">
+          <li *ngFor="let subItem of item.subItems">
+            <span *ngIf="!isCollapsed">{{ subItem }}</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <button
+    (click)="toggleNav()"
+    class="btn btn-info"
+    [ngClass]="isCollapsed ? 'bi bi-arrow-bar-right' : 'bi bi-arrow-bar-left'"
+  ></button>
+</div>
