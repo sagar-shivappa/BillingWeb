@@ -30,6 +30,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  justify-content: space-evenly;
 }
 
 .icon {
@@ -41,11 +42,19 @@
   list-style: none;
   padding: 0;
   margin: 10px 0;
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .sub-nav li {
   padding-left: 20px;
-  color: #ecf0f1;
+  width: 100%;
+}
+.sub-nav div {
+  padding: 10px;
+  text-align: end;
 }
 
 .toggle-btn {
@@ -72,4 +81,9 @@
   top: 50px;
   height: 30px;
   border-radius: 0px 5px 5px 0px;
+}
+.active {
+  color: #2c3e50;
+  background-color: white;
+  border-radius: 2px;
 }

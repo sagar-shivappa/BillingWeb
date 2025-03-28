@@ -2,19 +2,25 @@ export const sideOptions = [
   {
     label: 'Home',
     icon: '🏠',
+    route: 'home',
     isCollapsed: true,
-    subItems: ['Dashboard', 'Settings'],
+    subItems: [{ item: 'Dashboard', route: 'home/dashboard' }],
   },
   {
     label: 'Documents',
     icon: '📄',
+    route: 'document',
     isCollapsed: true,
-    subItems: ['File 1', 'File 2', 'File 3'],
+    subItems: [{ item: 'Sales Report', route: 'document/sales' }],
   },
   {
     label: 'Settings',
     icon: '⚙️',
+    route: 'settings',
     isCollapsed: true,
-    subItems: ['Preferences', 'Themes'],
+    subItems: [
+      { item: 'Items', route: 'settings/items' },
+      { item: 'Company Profile', route: 'settings/profile' },
+    ],
   },
 ];

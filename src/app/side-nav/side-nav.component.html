@@ -2,7 +2,11 @@
   <div class="side-nav" [ngClass]="{ collapsed: isCollapsed }">
     <ul class="nav-links">
       <li class="nav-item" *ngFor="let item of navItems">
-        <div class="nav-item-header" (click)="toggleSubMenu(item)">
+        <div
+          class="nav-item-header"
+          [routerLink]="[item.route]"
+          (click)="toggleSubMenu(item)"
+        >
           <i class="icon">{{ item.icon }}</i>
           <span *ngIf="!isCollapsed">{{ item.label }}</span>
           <span
@@ -14,7 +18,13 @@
 
         <ul *ngIf="!item.isCollapsed" class="sub-nav">
           <li *ngFor="let subItem of item.subItems">
-            <span *ngIf="!isCollapsed">{{ subItem }}</span>
+            <div
+              [routerLinkActive]="['active']"
+              [routerLink]="[subItem.route]"
+              *ngIf="!isCollapsed"
+            >
+              {{ subItem.item }}
+            </div>
           </li>
         </ul>
       </li>
