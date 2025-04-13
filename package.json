@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Billing_Web_UI": "node dist/billing-web-ui/server/server.mjs"
+    "serve:ssr:Billing_Web_UI": "node dist/billing-web-ui/server/server.mjs",
+    "build:ssr": "ng build && ng run billing-web-ui:server",
+    "serve:ssr": "node dist/billing-web-ui/server/main.js",
+    "dev:ssr": "ng run billing-web-ui:serve-ssr"
   },
   "private": true,
   "dependencies": {
